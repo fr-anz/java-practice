@@ -8,8 +8,6 @@
     "easy": {
       "summary": "Input customer name, order amount, and meal code. Display order category and meal category.",
       "requirements": [
-        "Use clear input prompts, for example Enter Customer Name:, Enter Order Amount:, and Enter Meal Code:.",
-        "Display the required output values clearly after all inputs are processed.",
         "Ask for customer name, order amount, and meal code.",
         "Determine the order category using getOrderCategory(double amount).",
         "Determine the meal category using getMealCategory(String mealCode).",
@@ -53,15 +51,74 @@
             "Snack Meal"
           ]
         }
+      ],
+      "inputLabels": [
+        "Customer Name",
+        "Order Amount",
+        "Meal Code"
+      ],
+      "referenceTables": [
+        {
+          "title": "Order Category",
+          "columns": [
+            "Order Amount",
+            "Category"
+          ],
+          "rows": [
+            [
+              "0-199",
+              "Small Order"
+            ],
+            [
+              "200-499",
+              "Regular Order"
+            ],
+            [
+              "500-999",
+              "Large Order"
+            ],
+            [
+              "1000 and above",
+              "Premium Order"
+            ]
+          ]
+        },
+        {
+          "title": "Meal Code",
+          "columns": [
+            "Code",
+            "Meal Category"
+          ],
+          "rows": [
+            [
+              "BF",
+              "Breakfast Meal"
+            ],
+            [
+              "LN",
+              "Lunch Meal"
+            ],
+            [
+              "DN",
+              "Dinner Meal"
+            ],
+            [
+              "SNK",
+              "Snack Meal"
+            ],
+            [
+              "Others",
+              "Invalid Meal Code"
+            ]
+          ]
+        }
       ]
     },
     "medium": {
       "summary": "Add customer age and display customer category.",
       "requirements": [
-        "Add an input for customer age.",
-        "Display customer age and customer category.",
-        "Add customer age as a new input.",
-        "Determine the customer category using getCustomerCategory(int age)."
+        "Ask for customer name, order amount, customer age, and meal code.",
+        "Use getOrderCategory(double amount), getCustomerCategory(int age), and getMealCategory(String mealCode)."
       ],
       "conceptChecks": {
         "scanner": true,
@@ -104,16 +161,101 @@
             "Breakfast Meal"
           ]
         }
+      ],
+      "inputLabels": [
+        "Customer Name",
+        "Order Amount",
+        "Customer Age",
+        "Meal Code"
+      ],
+      "referenceTables": [
+        {
+          "title": "Order Category",
+          "columns": [
+            "Order Amount",
+            "Category"
+          ],
+          "rows": [
+            [
+              "0-199",
+              "Small Order"
+            ],
+            [
+              "200-499",
+              "Regular Order"
+            ],
+            [
+              "500-999",
+              "Large Order"
+            ],
+            [
+              "1000 and above",
+              "Premium Order"
+            ]
+          ]
+        },
+        {
+          "title": "Customer Category",
+          "columns": [
+            "Age",
+            "Category"
+          ],
+          "rows": [
+            [
+              "0-12",
+              "Child Customer"
+            ],
+            [
+              "13-19",
+              "Teen Customer"
+            ],
+            [
+              "20-59",
+              "Adult Customer"
+            ],
+            [
+              "60 and above",
+              "Senior Customer"
+            ]
+          ]
+        },
+        {
+          "title": "Meal Code",
+          "columns": [
+            "Code",
+            "Meal Category"
+          ],
+          "rows": [
+            [
+              "BF",
+              "Breakfast Meal"
+            ],
+            [
+              "LN",
+              "Lunch Meal"
+            ],
+            [
+              "DN",
+              "Dinner Meal"
+            ],
+            [
+              "SNK",
+              "Snack Meal"
+            ],
+            [
+              "Others",
+              "Invalid Meal Code"
+            ]
+          ]
+        }
       ]
     },
     "hard": {
       "summary": "Display the complete restaurant order result.",
       "requirements": [
-        "Display the final output clearly and consistently.",
-        "Display the complete restaurant order result.",
-        "Display the complete restaurant order result after all inputs are entered.",
-        "Include customer name, order amount, order category, customer age, customer category, meal code, and meal category.",
-        "Handle invalid order amount and age values properly."
+        "Ask for customer name, order amount, customer age, and meal code.",
+        "Use getOrderCategory(double amount), getCustomerCategory(int age), and getMealCategory(String mealCode).",
+        "Display the complete restaurant order result after all inputs are processed."
       ],
       "conceptChecks": {
         "scanner": true,
@@ -153,6 +295,93 @@
             "Regular Order",
             "Adult Customer",
             "Invalid Meal Code"
+          ]
+        }
+      ],
+      "inputLabels": [
+        "Customer Name",
+        "Order Amount",
+        "Customer Age",
+        "Meal Code"
+      ],
+      "referenceTables": [
+        {
+          "title": "Order Category",
+          "columns": [
+            "Order Amount",
+            "Category"
+          ],
+          "rows": [
+            [
+              "0-199",
+              "Small Order"
+            ],
+            [
+              "200-499",
+              "Regular Order"
+            ],
+            [
+              "500-999",
+              "Large Order"
+            ],
+            [
+              "1000 and above",
+              "Premium Order"
+            ]
+          ]
+        },
+        {
+          "title": "Customer Category",
+          "columns": [
+            "Age",
+            "Category"
+          ],
+          "rows": [
+            [
+              "0-12",
+              "Child Customer"
+            ],
+            [
+              "13-19",
+              "Teen Customer"
+            ],
+            [
+              "20-59",
+              "Adult Customer"
+            ],
+            [
+              "60 and above",
+              "Senior Customer"
+            ]
+          ]
+        },
+        {
+          "title": "Meal Code",
+          "columns": [
+            "Code",
+            "Meal Category"
+          ],
+          "rows": [
+            [
+              "BF",
+              "Breakfast Meal"
+            ],
+            [
+              "LN",
+              "Lunch Meal"
+            ],
+            [
+              "DN",
+              "Dinner Meal"
+            ],
+            [
+              "SNK",
+              "Snack Meal"
+            ],
+            [
+              "Others",
+              "Invalid Meal Code"
+            ]
           ]
         }
       ]

@@ -8,8 +8,6 @@
     "easy": {
       "summary": "Input customer name, driver age, and vehicle code. Display driver category and vehicle type.",
       "requirements": [
-        "Use clear input prompts, for example Enter Customer Name:, Enter Driver Age:, and Enter Vehicle Code:.",
-        "Display the required output values clearly after all inputs are processed.",
         "Ask for customer name, driver age, and vehicle code.",
         "Determine the driver category using getDriverCategory(int age).",
         "Determine the vehicle type using getVehicleType(String vehicleCode).",
@@ -53,15 +51,74 @@
             "Sports Utility Vehicle"
           ]
         }
+      ],
+      "inputLabels": [
+        "Customer Name",
+        "Driver Age",
+        "Vehicle Code"
+      ],
+      "referenceTables": [
+        {
+          "title": "Driver Category",
+          "columns": [
+            "Driver Age",
+            "Category"
+          ],
+          "rows": [
+            [
+              "Below 18",
+              "Not Allowed"
+            ],
+            [
+              "18-25",
+              "Young Driver"
+            ],
+            [
+              "26-59",
+              "Adult Driver"
+            ],
+            [
+              "60 and above",
+              "Senior Driver"
+            ]
+          ]
+        },
+        {
+          "title": "Vehicle Code",
+          "columns": [
+            "Code",
+            "Vehicle Type"
+          ],
+          "rows": [
+            [
+              "CAR",
+              "Sedan Car"
+            ],
+            [
+              "SUV",
+              "Sports Utility Vehicle"
+            ],
+            [
+              "VAN",
+              "Passenger Van"
+            ],
+            [
+              "MC",
+              "Motorcycle"
+            ],
+            [
+              "Others",
+              "Invalid Vehicle Code"
+            ]
+          ]
+        }
       ]
     },
     "medium": {
       "summary": "Add rental days and display rental duration category.",
       "requirements": [
-        "Add an input for number of rental days.",
-        "Display rental days and rental duration category.",
-        "Add number of rental days as a new input.",
-        "Determine the rental duration category using getRentalDurationCategory(int days)."
+        "Ask for customer name, driver age, number of rental days, and vehicle code.",
+        "Use getDriverCategory(int age), getRentalDurationCategory(int days), and getVehicleType(String vehicleCode)."
       ],
       "conceptChecks": {
         "scanner": true,
@@ -104,17 +161,101 @@
             "Sports Utility Vehicle"
           ]
         }
+      ],
+      "inputLabels": [
+        "Customer Name",
+        "Driver Age",
+        "Number of Rental Days",
+        "Vehicle Code"
+      ],
+      "referenceTables": [
+        {
+          "title": "Driver Category",
+          "columns": [
+            "Driver Age",
+            "Category"
+          ],
+          "rows": [
+            [
+              "Below 18",
+              "Not Allowed"
+            ],
+            [
+              "18-25",
+              "Young Driver"
+            ],
+            [
+              "26-59",
+              "Adult Driver"
+            ],
+            [
+              "60 and above",
+              "Senior Driver"
+            ]
+          ]
+        },
+        {
+          "title": "Rental Duration",
+          "columns": [
+            "Rental Days",
+            "Category"
+          ],
+          "rows": [
+            [
+              "1-2",
+              "Short Rental"
+            ],
+            [
+              "3-7",
+              "Weekly Rental"
+            ],
+            [
+              "8-14",
+              "Extended Rental"
+            ],
+            [
+              "15 and above",
+              "Long-Term Rental"
+            ]
+          ]
+        },
+        {
+          "title": "Vehicle Code",
+          "columns": [
+            "Code",
+            "Vehicle Type"
+          ],
+          "rows": [
+            [
+              "CAR",
+              "Sedan Car"
+            ],
+            [
+              "SUV",
+              "Sports Utility Vehicle"
+            ],
+            [
+              "VAN",
+              "Passenger Van"
+            ],
+            [
+              "MC",
+              "Motorcycle"
+            ],
+            [
+              "Others",
+              "Invalid Vehicle Code"
+            ]
+          ]
+        }
       ]
     },
     "hard": {
       "summary": "Calculate rental fee using the vehicle type's daily rate and display the complete rental result.",
       "requirements": [
-        "Display daily rate and rental fee.",
-        "Display the complete vehicle rental result.",
-        "Determine the daily rate using getDailyRate(String vehicleCode).",
-        "Calculate rental fee using rental days * daily rate.",
-        "Use daily rates: CAR=1500, SUV=2500, VAN=3000, MC=800, invalid code=0.",
-        "Display the complete vehicle rental result."
+        "Ask for customer name, driver age, number of rental days, and vehicle code.",
+        "Use getDriverCategory(int age), getRentalDurationCategory(int days), getVehicleType(String vehicleCode), and getDailyRate(String vehicleCode).",
+        "Calculate rental fee using number of rental days * daily rate."
       ],
       "conceptChecks": {
         "scanner": true,
@@ -159,6 +300,99 @@
             "Weekly Rental",
             "Invalid Vehicle Code",
             "0"
+          ]
+        }
+      ],
+      "inputLabels": [
+        "Customer Name",
+        "Driver Age",
+        "Number of Rental Days",
+        "Vehicle Code"
+      ],
+      "referenceTables": [
+        {
+          "title": "Driver Category",
+          "columns": [
+            "Driver Age",
+            "Category"
+          ],
+          "rows": [
+            [
+              "Below 18",
+              "Not Allowed"
+            ],
+            [
+              "18-25",
+              "Young Driver"
+            ],
+            [
+              "26-59",
+              "Adult Driver"
+            ],
+            [
+              "60 and above",
+              "Senior Driver"
+            ]
+          ]
+        },
+        {
+          "title": "Rental Duration",
+          "columns": [
+            "Rental Days",
+            "Category"
+          ],
+          "rows": [
+            [
+              "1-2",
+              "Short Rental"
+            ],
+            [
+              "3-7",
+              "Weekly Rental"
+            ],
+            [
+              "8-14",
+              "Extended Rental"
+            ],
+            [
+              "15 and above",
+              "Long-Term Rental"
+            ]
+          ]
+        },
+        {
+          "title": "Vehicle Code and Daily Rate",
+          "columns": [
+            "Code",
+            "Vehicle Type",
+            "Daily Rate"
+          ],
+          "rows": [
+            [
+              "CAR",
+              "Sedan Car",
+              "1500"
+            ],
+            [
+              "SUV",
+              "Sports Utility Vehicle",
+              "2500"
+            ],
+            [
+              "VAN",
+              "Passenger Van",
+              "3000"
+            ],
+            [
+              "MC",
+              "Motorcycle",
+              "800"
+            ],
+            [
+              "Others",
+              "Invalid Vehicle Code",
+              "0"
+            ]
           ]
         }
       ]

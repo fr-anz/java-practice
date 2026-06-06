@@ -29,3 +29,17 @@ export async function runCode(problemId, level, code) {
   });
   return res.json();
 }
+
+export async function sendRunInput(sessionId, input) {
+  const res = await fetch(`${API_BASE}/run/input`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ sessionId, input }),
+  });
+  return res.json();
+}
+
+export async function fetchRunSession(sessionId) {
+  const res = await fetch(`${API_BASE}/run/session/${encodeURIComponent(sessionId)}`);
+  return res.json();
+}

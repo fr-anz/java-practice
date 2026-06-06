@@ -8,8 +8,6 @@
     "easy": {
       "summary": "Input product name, product price, and product code. Display price category and product type.",
       "requirements": [
-        "Use clear input prompts, for example Enter Product Name:, Enter Product Price:, and Enter Product Code:.",
-        "Display the required output values clearly after all inputs are processed.",
         "Ask for product name, product price, and product code.",
         "Determine the price category using getPriceCategory(double price).",
         "Determine the product type using getProductType(String productCode).",
@@ -55,15 +53,74 @@
             "Home Product"
           ]
         }
+      ],
+      "inputLabels": [
+        "Product Name",
+        "Product Price",
+        "Product Code"
+      ],
+      "referenceTables": [
+        {
+          "title": "Price Category",
+          "columns": [
+            "Product Price",
+            "Category"
+          ],
+          "rows": [
+            [
+              "0-500",
+              "Budget Item"
+            ],
+            [
+              "501-1500",
+              "Standard Item"
+            ],
+            [
+              "1501-5000",
+              "Premium Item"
+            ],
+            [
+              "5001 and above",
+              "Luxury Item"
+            ]
+          ]
+        },
+        {
+          "title": "Product Code",
+          "columns": [
+            "Code",
+            "Product Type"
+          ],
+          "rows": [
+            [
+              "FOOD",
+              "Food Product"
+            ],
+            [
+              "TECH",
+              "Technology Product"
+            ],
+            [
+              "CLTH",
+              "Clothing Product"
+            ],
+            [
+              "HOME",
+              "Home Product"
+            ],
+            [
+              "Others",
+              "Invalid Product Code"
+            ]
+          ]
+        }
       ]
     },
     "medium": {
       "summary": "Add quantity and display the discount rate.",
       "requirements": [
-        "Add an input for quantity.",
-        "Display quantity and discount rate.",
-        "Add quantity as a new input.",
-        "Determine the discount rate using getDiscountRate(int quantity)."
+        "Ask for product name, product price, quantity, and product code.",
+        "Use getPriceCategory(double price), getDiscountRate(int quantity), and getProductType(String productCode)."
       ],
       "conceptChecks": {
         "scanner": true,
@@ -109,17 +166,101 @@
             "Food Product"
           ]
         }
+      ],
+      "inputLabels": [
+        "Product Name",
+        "Product Price",
+        "Quantity",
+        "Product Code"
+      ],
+      "referenceTables": [
+        {
+          "title": "Price Category",
+          "columns": [
+            "Product Price",
+            "Category"
+          ],
+          "rows": [
+            [
+              "0-500",
+              "Budget Item"
+            ],
+            [
+              "501-1500",
+              "Standard Item"
+            ],
+            [
+              "1501-5000",
+              "Premium Item"
+            ],
+            [
+              "5001 and above",
+              "Luxury Item"
+            ]
+          ]
+        },
+        {
+          "title": "Discount Rate",
+          "columns": [
+            "Quantity",
+            "Discount"
+          ],
+          "rows": [
+            [
+              "1-2",
+              "0%"
+            ],
+            [
+              "3-5",
+              "5%"
+            ],
+            [
+              "6-10",
+              "10%"
+            ],
+            [
+              "11 and above",
+              "15%"
+            ]
+          ]
+        },
+        {
+          "title": "Product Code",
+          "columns": [
+            "Code",
+            "Product Type"
+          ],
+          "rows": [
+            [
+              "FOOD",
+              "Food Product"
+            ],
+            [
+              "TECH",
+              "Technology Product"
+            ],
+            [
+              "CLTH",
+              "Clothing Product"
+            ],
+            [
+              "HOME",
+              "Home Product"
+            ],
+            [
+              "Others",
+              "Invalid Product Code"
+            ]
+          ]
+        }
       ]
     },
     "hard": {
       "summary": "Calculate total amount before discount, discount amount, and final amount.",
       "requirements": [
-        "Display total amount before discount, discount amount, and final amount.",
-        "Display the complete product discount result.",
-        "Calculate total amount before discount using product price * quantity.",
-        "Calculate discount amount using total amount * discount rate.",
-        "Calculate final amount using total amount - discount amount.",
-        "Display the complete product discount result."
+        "Ask for product name, product price, quantity, and product code.",
+        "Use getPriceCategory(double price), getDiscountRate(int quantity), and getProductType(String productCode).",
+        "Calculate total amount before discount, discount amount, and final amount."
       ],
       "conceptChecks": {
         "scanner": true,
@@ -168,6 +309,93 @@
             "24000",
             "3600",
             "20400"
+          ]
+        }
+      ],
+      "inputLabels": [
+        "Product Name",
+        "Product Price",
+        "Quantity",
+        "Product Code"
+      ],
+      "referenceTables": [
+        {
+          "title": "Price Category",
+          "columns": [
+            "Product Price",
+            "Category"
+          ],
+          "rows": [
+            [
+              "0-500",
+              "Budget Item"
+            ],
+            [
+              "501-1500",
+              "Standard Item"
+            ],
+            [
+              "1501-5000",
+              "Premium Item"
+            ],
+            [
+              "5001 and above",
+              "Luxury Item"
+            ]
+          ]
+        },
+        {
+          "title": "Discount Rate",
+          "columns": [
+            "Quantity",
+            "Discount"
+          ],
+          "rows": [
+            [
+              "1-2",
+              "0%"
+            ],
+            [
+              "3-5",
+              "5%"
+            ],
+            [
+              "6-10",
+              "10%"
+            ],
+            [
+              "11 and above",
+              "15%"
+            ]
+          ]
+        },
+        {
+          "title": "Product Code",
+          "columns": [
+            "Code",
+            "Product Type"
+          ],
+          "rows": [
+            [
+              "FOOD",
+              "Food Product"
+            ],
+            [
+              "TECH",
+              "Technology Product"
+            ],
+            [
+              "CLTH",
+              "Clothing Product"
+            ],
+            [
+              "HOME",
+              "Home Product"
+            ],
+            [
+              "Others",
+              "Invalid Product Code"
+            ]
           ]
         }
       ]

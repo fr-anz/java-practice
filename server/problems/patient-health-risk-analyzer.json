@@ -8,8 +8,6 @@
     "easy": {
       "summary": "Input patient name, age, and service code. Display age group and service name.",
       "requirements": [
-        "Use clear input prompts, for example Enter Patient Name:, Enter Age:, and Enter Service Code:.",
-        "Display the required output values clearly after all inputs are processed.",
         "Ask for patient name, age, and service code.",
         "Determine the age group using getAgeGroup(int age).",
         "Determine the service name using getServiceName(String serviceCode).",
@@ -53,16 +51,75 @@
             "Laboratory Test"
           ]
         }
+      ],
+      "inputLabels": [
+        "Patient Name",
+        "Age",
+        "Service Code"
+      ],
+      "referenceTables": [
+        {
+          "title": "Age Group",
+          "columns": [
+            "Age",
+            "Group"
+          ],
+          "rows": [
+            [
+              "0-12",
+              "Child"
+            ],
+            [
+              "13-19",
+              "Teenager"
+            ],
+            [
+              "20-59",
+              "Adult"
+            ],
+            [
+              "60 and above",
+              "Senior Citizen"
+            ]
+          ]
+        },
+        {
+          "title": "Service Code",
+          "columns": [
+            "Code",
+            "Service Name"
+          ],
+          "rows": [
+            [
+              "GEN",
+              "General Checkup"
+            ],
+            [
+              "DENT",
+              "Dental Service"
+            ],
+            [
+              "EYE",
+              "Eye Consultation"
+            ],
+            [
+              "LAB",
+              "Laboratory Test"
+            ],
+            [
+              "Others",
+              "Invalid Service Code"
+            ]
+          ]
+        }
       ]
     },
     "medium": {
       "summary": "Add weight and height, calculate BMI, and display BMI category.",
       "requirements": [
-        "Add inputs for weight in kilograms and height in meters.",
-        "Display weight, height, BMI, and BMI category.",
-        "Add weight in kilograms and height in meters as new inputs.",
+        "Ask for patient name, age, weight in kilograms, height in meters, and service code.",
         "Calculate BMI using weight / (height * height).",
-        "Determine the BMI category using getBMICategory(double bmi)."
+        "Use getBMICategory(double bmi), getAgeGroup(int age), and getServiceName(String serviceCode)."
       ],
       "conceptChecks": {
         "scanner": true,
@@ -104,16 +161,103 @@
             "Laboratory Test"
           ]
         }
+      ],
+      "inputLabels": [
+        "Patient Name",
+        "Age",
+        "Weight in Kilograms",
+        "Height in Meters",
+        "Service Code"
+      ],
+      "referenceTables": [
+        {
+          "title": "Age Group",
+          "columns": [
+            "Age",
+            "Group"
+          ],
+          "rows": [
+            [
+              "0-12",
+              "Child"
+            ],
+            [
+              "13-19",
+              "Teenager"
+            ],
+            [
+              "20-59",
+              "Adult"
+            ],
+            [
+              "60 and above",
+              "Senior Citizen"
+            ]
+          ]
+        },
+        {
+          "title": "BMI Category",
+          "columns": [
+            "BMI",
+            "Category"
+          ],
+          "rows": [
+            [
+              "Below 18.5",
+              "Underweight"
+            ],
+            [
+              "18.5-24.9",
+              "Normal Weight"
+            ],
+            [
+              "25.0-29.9",
+              "Overweight"
+            ],
+            [
+              "30.0 and above",
+              "Obese"
+            ]
+          ]
+        },
+        {
+          "title": "Service Code",
+          "columns": [
+            "Code",
+            "Service Name"
+          ],
+          "rows": [
+            [
+              "GEN",
+              "General Checkup"
+            ],
+            [
+              "DENT",
+              "Dental Service"
+            ],
+            [
+              "EYE",
+              "Eye Consultation"
+            ],
+            [
+              "LAB",
+              "Laboratory Test"
+            ],
+            [
+              "Others",
+              "Invalid Service Code"
+            ]
+          ]
+        }
       ]
     },
     "hard": {
       "summary": "Display the complete patient health result.",
       "requirements": [
-        "Display the final output clearly and consistently.",
-        "Display the complete patient health result.",
-        "Display the complete patient health result after all inputs are entered.",
-        "Include patient name, age group, weight, height, BMI, BMI category, service code, and service name.",
-        "Handle invalid age, weight, and height values properly."
+        "Ask for patient name, age, weight in kilograms, height in meters, and service code.",
+        "Calculate BMI using weight / (height * height).",
+        "Use getBMICategory(double bmi), getAgeGroup(int age), and getServiceName(String serviceCode).",
+        "Display the complete patient health result after all inputs are processed."
       ],
       "conceptChecks": {
         "scanner": true,
@@ -154,6 +298,94 @@
             "Adult",
             "Underweight",
             "Invalid Service Code"
+          ]
+        }
+      ],
+      "inputLabels": [
+        "Patient Name",
+        "Age",
+        "Weight in Kilograms",
+        "Height in Meters",
+        "Service Code"
+      ],
+      "referenceTables": [
+        {
+          "title": "Age Group",
+          "columns": [
+            "Age",
+            "Group"
+          ],
+          "rows": [
+            [
+              "0-12",
+              "Child"
+            ],
+            [
+              "13-19",
+              "Teenager"
+            ],
+            [
+              "20-59",
+              "Adult"
+            ],
+            [
+              "60 and above",
+              "Senior Citizen"
+            ]
+          ]
+        },
+        {
+          "title": "BMI Category",
+          "columns": [
+            "BMI",
+            "Category"
+          ],
+          "rows": [
+            [
+              "Below 18.5",
+              "Underweight"
+            ],
+            [
+              "18.5-24.9",
+              "Normal Weight"
+            ],
+            [
+              "25.0-29.9",
+              "Overweight"
+            ],
+            [
+              "30.0 and above",
+              "Obese"
+            ]
+          ]
+        },
+        {
+          "title": "Service Code",
+          "columns": [
+            "Code",
+            "Service Name"
+          ],
+          "rows": [
+            [
+              "GEN",
+              "General Checkup"
+            ],
+            [
+              "DENT",
+              "Dental Service"
+            ],
+            [
+              "EYE",
+              "Eye Consultation"
+            ],
+            [
+              "LAB",
+              "Laboratory Test"
+            ],
+            [
+              "Others",
+              "Invalid Service Code"
+            ]
           ]
         }
       ]

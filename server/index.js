@@ -4,7 +4,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { getAllProblems, getProblem } from './problemLoader.js';
 import { checkSolution } from './checker.js';
-import { runJava } from './runner.js';
+import { getJavaSession, sendJavaSessionInput, startJavaSession } from './runner.js';
 import { checkSecurity } from './security.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -98,21 +98,31 @@ app.post('/api/run', async (req, res) => {
   }
 
   try {
-    const input = levelData.visibleSample?.input || '';
-    const result = await runJava(code, input);
-    if (result.cleanup) result.cleanup();
-
+    const result = startJavaSession(code);
     res.json({
       mode: 'run',
-      input,
+      input: '',
+      sessionId: result.sessionId,
       compile: result.compile,
       output: result.output || '',
-      runtimeError: result.error || null,
-      timedOut: result.timedOut || false,
+      runtimeError: result.runtimeError || null,
+      done: result.done,
     });
   } catch (err) {
     res.status(500).json({ error: `Server error: ${err.message}` });
   }
+});
+
+app.post('/api/run/input', (req, res) => {
+  const { sessionId, input } = req.body;
+  if (!sessionId || typeof input !== 'string') {
+    return res.status(400).json({ error: 'Missing sessionId or input' });
+  }
+  res.json(sendJavaSessionInput(sessionId, input));
+});
+
+app.get('/api/run/session/:sessionId', (req, res) => {
+  res.json(getJavaSession(req.params.sessionId));
 });
 
 function sanitizeProblemForClient(problem) {

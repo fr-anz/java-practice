@@ -8,8 +8,6 @@
     "easy": {
       "summary": "Input employee name, monthly salary, and department code. Display salary level and department name.",
       "requirements": [
-        "Use clear input prompts, for example Enter Employee Name:, Enter Monthly Salary:, and Enter Department Code:.",
-        "Display the required output values clearly after all inputs are processed.",
         "Ask for employee name, monthly salary, and department code.",
         "Determine the salary level using getSalaryLevel(double salary).",
         "Determine the department name using getDepartmentName(String departmentCode).",
@@ -53,15 +51,74 @@
             "Invalid Department Code"
           ]
         }
+      ],
+      "inputLabels": [
+        "Employee Name",
+        "Monthly Salary",
+        "Department Code"
+      ],
+      "referenceTables": [
+        {
+          "title": "Salary Level",
+          "columns": [
+            "Monthly Salary",
+            "Salary Level"
+          ],
+          "rows": [
+            [
+              "0-15000",
+              "Entry Level"
+            ],
+            [
+              "15001-30000",
+              "Junior Level"
+            ],
+            [
+              "30001-60000",
+              "Mid Level"
+            ],
+            [
+              "60001 and above",
+              "Senior Level"
+            ]
+          ]
+        },
+        {
+          "title": "Department Code",
+          "columns": [
+            "Code",
+            "Department Name"
+          ],
+          "rows": [
+            [
+              "IT",
+              "Information Technology Department"
+            ],
+            [
+              "HR",
+              "Human Resources Department"
+            ],
+            [
+              "FIN",
+              "Finance Department"
+            ],
+            [
+              "MKT",
+              "Marketing Department"
+            ],
+            [
+              "Others",
+              "Invalid Department Code"
+            ]
+          ]
+        }
       ]
     },
     "medium": {
       "summary": "Add years of service and display service status.",
       "requirements": [
-        "Add an input for years of service.",
-        "Display years of service and service status.",
-        "Add years of service as a new input.",
-        "Determine the service status using getServiceStatus(int years)."
+        "Ask for employee name, monthly salary, years of service, and department code.",
+        "Use getSalaryLevel(double salary), getServiceStatus(int years), and getDepartmentName(String departmentCode)."
       ],
       "conceptChecks": {
         "scanner": true,
@@ -104,16 +161,101 @@
             "Marketing Department"
           ]
         }
+      ],
+      "inputLabels": [
+        "Employee Name",
+        "Monthly Salary",
+        "Years of Service",
+        "Department Code"
+      ],
+      "referenceTables": [
+        {
+          "title": "Salary Level",
+          "columns": [
+            "Monthly Salary",
+            "Salary Level"
+          ],
+          "rows": [
+            [
+              "0-15000",
+              "Entry Level"
+            ],
+            [
+              "15001-30000",
+              "Junior Level"
+            ],
+            [
+              "30001-60000",
+              "Mid Level"
+            ],
+            [
+              "60001 and above",
+              "Senior Level"
+            ]
+          ]
+        },
+        {
+          "title": "Service Status",
+          "columns": [
+            "Years of Service",
+            "Status"
+          ],
+          "rows": [
+            [
+              "0-1",
+              "New Employee"
+            ],
+            [
+              "2-5",
+              "Regular Employee"
+            ],
+            [
+              "6-10",
+              "Experienced Employee"
+            ],
+            [
+              "11 and above",
+              "Veteran Employee"
+            ]
+          ]
+        },
+        {
+          "title": "Department Code",
+          "columns": [
+            "Code",
+            "Department Name"
+          ],
+          "rows": [
+            [
+              "IT",
+              "Information Technology Department"
+            ],
+            [
+              "HR",
+              "Human Resources Department"
+            ],
+            [
+              "FIN",
+              "Finance Department"
+            ],
+            [
+              "MKT",
+              "Marketing Department"
+            ],
+            [
+              "Others",
+              "Invalid Department Code"
+            ]
+          ]
+        }
       ]
     },
     "hard": {
       "summary": "Display the complete employee salary and department result.",
       "requirements": [
-        "Display the final output clearly and consistently.",
-        "Display the complete employee salary and department result.",
-        "Display the complete employee salary and department result after all inputs are entered.",
-        "Include employee name, salary level, years of service, service status, department code, and department name.",
-        "Handle invalid salary and years-of-service values properly."
+        "Ask for employee name, monthly salary, years of service, and department code.",
+        "Use getSalaryLevel(double salary), getServiceStatus(int years), and getDepartmentName(String departmentCode).",
+        "Display the complete employee salary and department result after all inputs are processed."
       ],
       "conceptChecks": {
         "scanner": true,
@@ -153,6 +295,93 @@
             "Mid Level",
             "Experienced Employee",
             "Finance Department"
+          ]
+        }
+      ],
+      "inputLabels": [
+        "Employee Name",
+        "Monthly Salary",
+        "Years of Service",
+        "Department Code"
+      ],
+      "referenceTables": [
+        {
+          "title": "Salary Level",
+          "columns": [
+            "Monthly Salary",
+            "Salary Level"
+          ],
+          "rows": [
+            [
+              "0-15000",
+              "Entry Level"
+            ],
+            [
+              "15001-30000",
+              "Junior Level"
+            ],
+            [
+              "30001-60000",
+              "Mid Level"
+            ],
+            [
+              "60001 and above",
+              "Senior Level"
+            ]
+          ]
+        },
+        {
+          "title": "Service Status",
+          "columns": [
+            "Years of Service",
+            "Status"
+          ],
+          "rows": [
+            [
+              "0-1",
+              "New Employee"
+            ],
+            [
+              "2-5",
+              "Regular Employee"
+            ],
+            [
+              "6-10",
+              "Experienced Employee"
+            ],
+            [
+              "11 and above",
+              "Veteran Employee"
+            ]
+          ]
+        },
+        {
+          "title": "Department Code",
+          "columns": [
+            "Code",
+            "Department Name"
+          ],
+          "rows": [
+            [
+              "IT",
+              "Information Technology Department"
+            ],
+            [
+              "HR",
+              "Human Resources Department"
+            ],
+            [
+              "FIN",
+              "Finance Department"
+            ],
+            [
+              "MKT",
+              "Marketing Department"
+            ],
+            [
+              "Others",
+              "Invalid Department Code"
+            ]
           ]
         }
       ]

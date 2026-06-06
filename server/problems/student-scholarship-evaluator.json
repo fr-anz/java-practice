@@ -8,8 +8,6 @@
     "easy": {
       "summary": "Input student name, final grade, and scholarship code. Display grade standing and scholarship name.",
       "requirements": [
-        "Use clear input prompts, for example Enter Student Name:, Enter Final Grade:, and Enter Scholarship Code:.",
-        "Display the required output values clearly after all inputs are processed.",
         "Ask for student name, final grade, and scholarship code.",
         "Determine the grade standing using getGradeStanding(double grade).",
         "Determine the scholarship name using getScholarshipName(String scholarshipCode).",
@@ -53,15 +51,78 @@
             "Invalid Scholarship Code"
           ]
         }
+      ],
+      "inputLabels": [
+        "Student Name",
+        "Final Grade",
+        "Scholarship Code"
+      ],
+      "referenceTables": [
+        {
+          "title": "Grade Standing",
+          "columns": [
+            "Final Grade",
+            "Standing"
+          ],
+          "rows": [
+            [
+              "95-100",
+              "President's Lister"
+            ],
+            [
+              "90-94",
+              "Dean's Lister"
+            ],
+            [
+              "85-89",
+              "Honor Student"
+            ],
+            [
+              "75-84",
+              "Regular Student"
+            ],
+            [
+              "Below 75",
+              "Failed"
+            ]
+          ]
+        },
+        {
+          "title": "Scholarship Code",
+          "columns": [
+            "Code",
+            "Scholarship Name"
+          ],
+          "rows": [
+            [
+              "ACAD",
+              "Academic Scholarship"
+            ],
+            [
+              "NEED",
+              "Financial Assistance Scholarship"
+            ],
+            [
+              "ATH",
+              "Athletic Scholarship"
+            ],
+            [
+              "ART",
+              "Arts Scholarship"
+            ],
+            [
+              "Others",
+              "Invalid Scholarship Code"
+            ]
+          ]
+        }
       ]
     },
     "medium": {
       "summary": "Add monthly family income and display income category plus scholarship eligibility.",
       "requirements": [
-        "Add an input for monthly family income.",
-        "Display monthly family income, income category, and scholarship eligibility.",
-        "Add monthly family income as a new input.",
-        "Determine the income category using getIncomeCategory(double income).",
+        "Ask for student name, final grade, monthly family income, and scholarship code.",
+        "Use getGradeStanding(double grade), getIncomeCategory(double income), and getScholarshipName(String scholarshipCode).",
         "Determine scholarship eligibility using grade, income, and valid scholarship code."
       ],
       "conceptChecks": {
@@ -108,17 +169,100 @@
             "Not Eligible"
           ]
         }
+      ],
+      "inputLabels": [
+        "Student Name",
+        "Final Grade",
+        "Monthly Family Income",
+        "Scholarship Code"
+      ],
+      "referenceTables": [
+        {
+          "title": "Grade Standing",
+          "columns": [
+            "Final Grade",
+            "Standing"
+          ],
+          "rows": [
+            [
+              "95-100",
+              "President's Lister"
+            ],
+            [
+              "90-94",
+              "Dean's Lister"
+            ],
+            [
+              "85-89",
+              "Honor Student"
+            ],
+            [
+              "75-84",
+              "Regular Student"
+            ],
+            [
+              "Below 75",
+              "Failed"
+            ]
+          ]
+        },
+        {
+          "title": "Income Category",
+          "columns": [
+            "Monthly Income",
+            "Category"
+          ],
+          "rows": [
+            [
+              "0-10000",
+              "Low Income"
+            ],
+            [
+              "10001-30000",
+              "Middle Income"
+            ],
+            [
+              "30001 and above",
+              "High Income"
+            ]
+          ]
+        },
+        {
+          "title": "Scholarship Code",
+          "columns": [
+            "Code",
+            "Scholarship Name"
+          ],
+          "rows": [
+            [
+              "ACAD",
+              "Academic Scholarship"
+            ],
+            [
+              "NEED",
+              "Financial Assistance Scholarship"
+            ],
+            [
+              "ATH",
+              "Athletic Scholarship"
+            ],
+            [
+              "ART",
+              "Arts Scholarship"
+            ],
+            [
+              "Others",
+              "Invalid Scholarship Code"
+            ]
+          ]
+        }
       ]
     },
     "hard": {
       "summary": "Add failed subjects and determine the final scholarship decision using all eligibility conditions.",
       "requirements": [
-        "Add an input for number of failed subjects.",
-        "Display failed subjects and final decision.",
-        "Add number of failed subjects as a new input.",
-        "Determine the final decision using getScholarshipDecision(double grade, double income, int failedSubjects, String scholarshipCode).",
-        "Apply the full eligibility rule: grade is 85 or above, income is 30000 or below, failed subjects is 0, and scholarship code is valid.",
-        "Display the complete final scholarship result."
+        "Ask for student name, final grade, monthly family income, number of failed subjects, and scholarship code.",
+        "Use getGradeStanding(double grade), getIncomeCategory(double income), getScholarshipName(String scholarshipCode), and getScholarshipDecision(double grade, double income, int failedSubjects, String scholarshipCode)."
       ],
       "conceptChecks": {
         "scanner": true,
@@ -162,6 +306,119 @@
             "Dean's Lister",
             "Invalid Scholarship Code",
             "Not Eligible"
+          ]
+        }
+      ],
+      "inputLabels": [
+        "Student Name",
+        "Final Grade",
+        "Monthly Family Income",
+        "Number of Failed Subjects",
+        "Scholarship Code"
+      ],
+      "referenceTables": [
+        {
+          "title": "Grade Standing",
+          "columns": [
+            "Final Grade",
+            "Standing"
+          ],
+          "rows": [
+            [
+              "95-100",
+              "President's Lister"
+            ],
+            [
+              "90-94",
+              "Dean's Lister"
+            ],
+            [
+              "85-89",
+              "Honor Student"
+            ],
+            [
+              "75-84",
+              "Regular Student"
+            ],
+            [
+              "Below 75",
+              "Failed"
+            ]
+          ]
+        },
+        {
+          "title": "Income Category",
+          "columns": [
+            "Monthly Income",
+            "Category"
+          ],
+          "rows": [
+            [
+              "0-10000",
+              "Low Income"
+            ],
+            [
+              "10001-30000",
+              "Middle Income"
+            ],
+            [
+              "30001 and above",
+              "High Income"
+            ]
+          ]
+        },
+        {
+          "title": "Scholarship Code",
+          "columns": [
+            "Code",
+            "Scholarship Name"
+          ],
+          "rows": [
+            [
+              "ACAD",
+              "Academic Scholarship"
+            ],
+            [
+              "NEED",
+              "Financial Assistance Scholarship"
+            ],
+            [
+              "ATH",
+              "Athletic Scholarship"
+            ],
+            [
+              "ART",
+              "Arts Scholarship"
+            ],
+            [
+              "Others",
+              "Invalid Scholarship Code"
+            ]
+          ]
+        },
+        {
+          "title": "Final Decision Rule",
+          "columns": [
+            "Condition",
+            "Required Value"
+          ],
+          "rows": [
+            [
+              "Final Grade",
+              "85 or above"
+            ],
+            [
+              "Monthly Family Income",
+              "30000 or below"
+            ],
+            [
+              "Failed Subjects",
+              "0"
+            ],
+            [
+              "Scholarship Code",
+              "Valid code"
+            ]
           ]
         }
       ]

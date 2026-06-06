@@ -8,8 +8,6 @@
     "easy": {
       "summary": "Input customer name, data usage, and plan code. Display usage category and plan name.",
       "requirements": [
-        "Use clear input prompts, for example Enter Customer Name:, Enter Monthly Data Usage in GB:, and Enter Plan Code:.",
-        "Display the required output values clearly after all inputs are processed.",
         "Ask for customer name, monthly data usage in GB, and plan code.",
         "Determine the usage category using getUsageCategory(double dataUsage).",
         "Determine the plan name using getPlanName(String planCode).",
@@ -55,15 +53,74 @@
             "Basic Internet Plan"
           ]
         }
+      ],
+      "inputLabels": [
+        "Customer Name",
+        "Monthly Data Usage in GB",
+        "Plan Code"
+      ],
+      "referenceTables": [
+        {
+          "title": "Usage Category",
+          "columns": [
+            "Data Usage",
+            "Category"
+          ],
+          "rows": [
+            [
+              "0-50 GB",
+              "Light User"
+            ],
+            [
+              "51-150 GB",
+              "Moderate User"
+            ],
+            [
+              "151-300 GB",
+              "Heavy User"
+            ],
+            [
+              "301 GB and above",
+              "Extreme User"
+            ]
+          ]
+        },
+        {
+          "title": "Plan Code",
+          "columns": [
+            "Code",
+            "Internet Plan"
+          ],
+          "rows": [
+            [
+              "BASIC",
+              "Basic Internet Plan"
+            ],
+            [
+              "STD",
+              "Standard Internet Plan"
+            ],
+            [
+              "PREM",
+              "Premium Internet Plan"
+            ],
+            [
+              "FAM",
+              "Family Internet Plan"
+            ],
+            [
+              "Others",
+              "Invalid Plan Code"
+            ]
+          ]
+        }
       ]
     },
     "medium": {
       "summary": "Add monthly bill amount and display bill status.",
       "requirements": [
-        "Add an input for monthly bill amount.",
-        "Display monthly bill amount and bill status.",
-        "Add monthly bill amount as a new input.",
-        "Determine the bill status using getBillStatus(double billAmount)."
+        "Ask for customer name, monthly data usage in GB, monthly bill amount, and plan code.",
+        "Use getUsageCategory(double dataUsage), getBillStatus(double billAmount), and getPlanName(String planCode)."
       ],
       "conceptChecks": {
         "scanner": true,
@@ -110,16 +167,101 @@
             "Basic Internet Plan"
           ]
         }
+      ],
+      "inputLabels": [
+        "Customer Name",
+        "Monthly Data Usage in GB",
+        "Monthly Bill Amount",
+        "Plan Code"
+      ],
+      "referenceTables": [
+        {
+          "title": "Usage Category",
+          "columns": [
+            "Data Usage",
+            "Category"
+          ],
+          "rows": [
+            [
+              "0-50 GB",
+              "Light User"
+            ],
+            [
+              "51-150 GB",
+              "Moderate User"
+            ],
+            [
+              "151-300 GB",
+              "Heavy User"
+            ],
+            [
+              "301 GB and above",
+              "Extreme User"
+            ]
+          ]
+        },
+        {
+          "title": "Bill Status",
+          "columns": [
+            "Monthly Bill",
+            "Status"
+          ],
+          "rows": [
+            [
+              "0-999",
+              "Basic Payment"
+            ],
+            [
+              "1000-1999",
+              "Standard Payment"
+            ],
+            [
+              "2000-2999",
+              "Premium Payment"
+            ],
+            [
+              "3000 and above",
+              "High Payment"
+            ]
+          ]
+        },
+        {
+          "title": "Plan Code",
+          "columns": [
+            "Code",
+            "Internet Plan"
+          ],
+          "rows": [
+            [
+              "BASIC",
+              "Basic Internet Plan"
+            ],
+            [
+              "STD",
+              "Standard Internet Plan"
+            ],
+            [
+              "PREM",
+              "Premium Internet Plan"
+            ],
+            [
+              "FAM",
+              "Family Internet Plan"
+            ],
+            [
+              "Others",
+              "Invalid Plan Code"
+            ]
+          ]
+        }
       ]
     },
     "hard": {
       "summary": "Display the complete internet usage result.",
       "requirements": [
-        "Display the final output clearly and consistently.",
-        "Display the complete internet usage result.",
-        "Display the complete internet usage result after all inputs are entered.",
-        "Include customer name, usage category, bill amount, bill status, plan code, and plan name.",
-        "Handle invalid data usage and bill amount values properly."
+        "Ask for customer name, monthly data usage in GB, monthly bill amount, and plan code.",
+        "Use getUsageCategory(double dataUsage), getBillStatus(double billAmount), and getPlanName(String planCode).",
+        "Display the complete internet usage result after all inputs are processed."
       ],
       "conceptChecks": {
         "scanner": true,
@@ -163,6 +305,93 @@
             "Heavy User",
             "Standard Payment",
             "Invalid Plan Code"
+          ]
+        }
+      ],
+      "inputLabels": [
+        "Customer Name",
+        "Monthly Data Usage in GB",
+        "Monthly Bill Amount",
+        "Plan Code"
+      ],
+      "referenceTables": [
+        {
+          "title": "Usage Category",
+          "columns": [
+            "Data Usage",
+            "Category"
+          ],
+          "rows": [
+            [
+              "0-50 GB",
+              "Light User"
+            ],
+            [
+              "51-150 GB",
+              "Moderate User"
+            ],
+            [
+              "151-300 GB",
+              "Heavy User"
+            ],
+            [
+              "301 GB and above",
+              "Extreme User"
+            ]
+          ]
+        },
+        {
+          "title": "Bill Status",
+          "columns": [
+            "Monthly Bill",
+            "Status"
+          ],
+          "rows": [
+            [
+              "0-999",
+              "Basic Payment"
+            ],
+            [
+              "1000-1999",
+              "Standard Payment"
+            ],
+            [
+              "2000-2999",
+              "Premium Payment"
+            ],
+            [
+              "3000 and above",
+              "High Payment"
+            ]
+          ]
+        },
+        {
+          "title": "Plan Code",
+          "columns": [
+            "Code",
+            "Internet Plan"
+          ],
+          "rows": [
+            [
+              "BASIC",
+              "Basic Internet Plan"
+            ],
+            [
+              "STD",
+              "Standard Internet Plan"
+            ],
+            [
+              "PREM",
+              "Premium Internet Plan"
+            ],
+            [
+              "FAM",
+              "Family Internet Plan"
+            ],
+            [
+              "Others",
+              "Invalid Plan Code"
+            ]
           ]
         }
       ]
