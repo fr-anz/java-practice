@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Java Hands-on Reviewer</title>
+  </head>
+  <body>
+    <div id="app">
+      <div id="main-layout">
+        <aside id="sidebar">
+          <nav id="problem-nav"></nav>
+        </aside>
+
+        <section id="problem-panel">
+          <div id="problem-header">
+            <h2 id="problem-title">Select a problem</h2>
+            <div id="difficulty-tabs">
+              <button class="diff-tab active" data-level="easy">Easy</button>
+              <button class="diff-tab" data-level="medium">Medium</button>
+              <button class="diff-tab" data-level="hard">Hard</button>
+            </div>
+          </div>
+          <div id="problem-content">
+            <div id="problem-placeholder">
+              <p>Select a problem from the sidebar to begin.</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="editor-panel">
+          <div id="editor-toolbar">
+            <span id="editor-filename">Main.java</span>
+            <div id="editor-actions">
+              <button id="btn-run" class="btn btn-primary">Run Code</button>
+              <button id="btn-submit" class="btn btn-accent">Submit Answer</button>
+              <button id="btn-reset" class="btn btn-ghost">Reset</button>
+            </div>
+          </div>
+          <div id="monaco-editor"></div>
+          <div id="results-panel">
+            <div id="results-placeholder">Run or submit your code to see results here.</div>
+          </div>
+        </section>
+      </div>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

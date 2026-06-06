@@ -1,0 +1,170 @@
+{
+  "id": "student-scholarship-evaluator",
+  "title": "Student Scholarship Evaluator",
+  "category": "Scanner, Methods, If-Else, Switch, Exception Handling",
+  "description": "Create a simple Java console-based application that evaluates a student's scholarship eligibility based on grade, family income, failed subjects, and scholarship code.",
+  "classNamePattern": "Main",
+  "levels": {
+    "easy": {
+      "summary": "Input student name, final grade, and scholarship code. Display grade standing and scholarship name.",
+      "requirements": [
+        "Use clear input prompts, for example Enter Student Name:, Enter Final Grade:, and Enter Scholarship Code:.",
+        "Display the required output values clearly after all inputs are processed.",
+        "Ask for student name, final grade, and scholarship code.",
+        "Determine the grade standing using getGradeStanding(double grade).",
+        "Determine the scholarship name using getScholarshipName(String scholarshipCode).",
+        "Use if-else for grade standing and switch for scholarship code."
+      ],
+      "conceptChecks": {
+        "scanner": true,
+        "ifElse": true,
+        "switch": true,
+        "loop": false,
+        "methods": 2,
+        "exceptionHandling": true,
+        "scannerClose": true
+      },
+      "visibleSample": {
+        "input": "Franz Baes\n91\nacad\n",
+        "expectedOutput": [
+          "Franz Baes",
+          "91",
+          "Dean's Lister",
+          "ACAD",
+          "Academic Scholarship"
+        ]
+      },
+      "hiddenTests": [
+        {
+          "input": "Ana Reyes\n86\nneed\n",
+          "expectedContains": [
+            "Ana Reyes",
+            "Honor Student",
+            "NEED",
+            "Financial Assistance Scholarship"
+          ]
+        },
+        {
+          "input": "Leo Cruz\n74\nxyz\n",
+          "expectedContains": [
+            "Leo Cruz",
+            "Failed",
+            "XYZ",
+            "Invalid Scholarship Code"
+          ]
+        }
+      ]
+    },
+    "medium": {
+      "summary": "Add monthly family income and display income category plus scholarship eligibility.",
+      "requirements": [
+        "Add an input for monthly family income.",
+        "Display monthly family income, income category, and scholarship eligibility.",
+        "Add monthly family income as a new input.",
+        "Determine the income category using getIncomeCategory(double income).",
+        "Determine scholarship eligibility using grade, income, and valid scholarship code."
+      ],
+      "conceptChecks": {
+        "scanner": true,
+        "ifElse": true,
+        "switch": true,
+        "loop": false,
+        "methods": 3,
+        "exceptionHandling": true,
+        "scannerClose": true
+      },
+      "visibleSample": {
+        "input": "Franz Baes\n91\n25000\nacad\n",
+        "expectedOutput": [
+          "Franz Baes",
+          "Dean's Lister",
+          "25000",
+          "Middle Income",
+          "ACAD",
+          "Academic Scholarship",
+          "Eligible"
+        ]
+      },
+      "hiddenTests": [
+        {
+          "input": "Mika Tan\n84\n9000\nart\n",
+          "expectedContains": [
+            "Mika Tan",
+            "Regular Student",
+            "Low Income",
+            "ART",
+            "Arts Scholarship",
+            "Not Eligible"
+          ]
+        },
+        {
+          "input": "Ben Lim\n95\n45000\nath\n",
+          "expectedContains": [
+            "Ben Lim",
+            "President's Lister",
+            "High Income",
+            "ATH",
+            "Athletic Scholarship",
+            "Not Eligible"
+          ]
+        }
+      ]
+    },
+    "hard": {
+      "summary": "Add failed subjects and determine the final scholarship decision using all eligibility conditions.",
+      "requirements": [
+        "Add an input for number of failed subjects.",
+        "Display failed subjects and final decision.",
+        "Add number of failed subjects as a new input.",
+        "Determine the final decision using getScholarshipDecision(double grade, double income, int failedSubjects, String scholarshipCode).",
+        "Apply the full eligibility rule: grade is 85 or above, income is 30000 or below, failed subjects is 0, and scholarship code is valid.",
+        "Display the complete final scholarship result."
+      ],
+      "conceptChecks": {
+        "scanner": true,
+        "ifElse": true,
+        "switch": true,
+        "loop": false,
+        "methods": 4,
+        "exceptionHandling": true,
+        "scannerClose": true
+      },
+      "visibleSample": {
+        "input": "Franz Baes\n91\n25000\n0\nacad\n",
+        "expectedOutput": [
+          "Franz Baes",
+          "91",
+          "Dean's Lister",
+          "25000",
+          "Middle Income",
+          "0",
+          "ACAD",
+          "Academic Scholarship",
+          "Eligible for Scholarship"
+        ]
+      },
+      "hiddenTests": [
+        {
+          "input": "Ana Reyes\n88\n28000\n1\nneed\n",
+          "expectedContains": [
+            "Ana Reyes",
+            "Honor Student",
+            "Middle Income",
+            "Failed Subjects",
+            "1",
+            "Not Eligible"
+          ]
+        },
+        {
+          "input": "Leo Cruz\n92\n20000\n0\nbad\n",
+          "expectedContains": [
+            "Leo Cruz",
+            "Dean's Lister",
+            "Invalid Scholarship Code",
+            "Not Eligible"
+          ]
+        }
+      ]
+    }
+  }
+}

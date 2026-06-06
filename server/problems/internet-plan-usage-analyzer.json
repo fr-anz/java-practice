@@ -1,0 +1,171 @@
+{
+  "id": "internet-plan-usage-analyzer",
+  "title": "Internet Plan Usage Analyzer",
+  "category": "Scanner, Methods, If-Else, Switch, Exception Handling",
+  "description": "Create a simple Java console-based application that analyzes a customer's internet usage, bill status, and plan type.",
+  "classNamePattern": "Main",
+  "levels": {
+    "easy": {
+      "summary": "Input customer name, data usage, and plan code. Display usage category and plan name.",
+      "requirements": [
+        "Use clear input prompts, for example Enter Customer Name:, Enter Monthly Data Usage in GB:, and Enter Plan Code:.",
+        "Display the required output values clearly after all inputs are processed.",
+        "Ask for customer name, monthly data usage in GB, and plan code.",
+        "Determine the usage category using getUsageCategory(double dataUsage).",
+        "Determine the plan name using getPlanName(String planCode).",
+        "Use if-else for usage category and switch for plan code."
+      ],
+      "conceptChecks": {
+        "scanner": true,
+        "ifElse": true,
+        "switch": true,
+        "loop": false,
+        "methods": 2,
+        "exceptionHandling": true,
+        "scannerClose": true
+      },
+      "visibleSample": {
+        "input": "Maria Santos\n120\nstd\n",
+        "expectedOutput": [
+          "Maria Santos",
+          "120",
+          "Moderate User",
+          "STD",
+          "Standard Internet Plan"
+        ]
+      },
+      "hiddenTests": [
+        {
+          "input": "Leo Cruz\n320\nfam\n",
+          "expectedContains": [
+            "Usage Category: Moderate User",
+            "Leo Cruz",
+            "Extreme User",
+            "FAM",
+            "Family Internet Plan"
+          ]
+        },
+        {
+          "input": "Ana Reyes\n40\nbasic\n",
+          "expectedContains": [
+            "Usage Category: Moderate User",
+            "Ana Reyes",
+            "Light User",
+            "BASIC",
+            "Basic Internet Plan"
+          ]
+        }
+      ]
+    },
+    "medium": {
+      "summary": "Add monthly bill amount and display bill status.",
+      "requirements": [
+        "Add an input for monthly bill amount.",
+        "Display monthly bill amount and bill status.",
+        "Add monthly bill amount as a new input.",
+        "Determine the bill status using getBillStatus(double billAmount)."
+      ],
+      "conceptChecks": {
+        "scanner": true,
+        "ifElse": true,
+        "switch": true,
+        "loop": false,
+        "methods": 3,
+        "exceptionHandling": true,
+        "scannerClose": true
+      },
+      "visibleSample": {
+        "input": "Maria Santos\n120\n1500\nstd\n",
+        "expectedOutput": [
+          "Maria Santos",
+          "Moderate User",
+          "1500",
+          "Standard Payment",
+          "STD",
+          "Standard Internet Plan"
+        ]
+      },
+      "hiddenTests": [
+        {
+          "input": "Ben Reyes\n260\n2500\nprem\n",
+          "expectedContains": [
+            "Usage Category: Moderate User",
+            "Bill Status: Standard Payment",
+            "Ben Reyes",
+            "Heavy User",
+            "Premium Payment",
+            "PREM",
+            "Premium Internet Plan"
+          ]
+        },
+        {
+          "input": "Cora Lim\n80\n850\nbasic\n",
+          "expectedContains": [
+            "Usage Category: Moderate User",
+            "Bill Status: Standard Payment",
+            "Cora Lim",
+            "Moderate User",
+            "Basic Payment",
+            "BASIC",
+            "Basic Internet Plan"
+          ]
+        }
+      ]
+    },
+    "hard": {
+      "summary": "Display the complete internet usage result.",
+      "requirements": [
+        "Display the final output clearly and consistently.",
+        "Display the complete internet usage result.",
+        "Display the complete internet usage result after all inputs are entered.",
+        "Include customer name, usage category, bill amount, bill status, plan code, and plan name.",
+        "Handle invalid data usage and bill amount values properly."
+      ],
+      "conceptChecks": {
+        "scanner": true,
+        "ifElse": true,
+        "switch": true,
+        "loop": false,
+        "methods": 3,
+        "exceptionHandling": true,
+        "scannerClose": true
+      },
+      "visibleSample": {
+        "input": "Maria Santos\n120\n1500\nstd\n",
+        "expectedOutput": [
+          "Maria Santos",
+          "120",
+          "Moderate User",
+          "1500",
+          "Standard Payment",
+          "STD",
+          "Standard Internet Plan"
+        ]
+      },
+      "hiddenTests": [
+        {
+          "input": "Dan Tan\n305\n3200\nfam\n",
+          "expectedContains": [
+            "Usage Category: Moderate User",
+            "Bill Status: Standard Payment",
+            "Dan Tan",
+            "Extreme User",
+            "High Payment",
+            "Family Internet Plan"
+          ]
+        },
+        {
+          "input": "Mika Tan\n151\n1999\nbad\n",
+          "expectedContains": [
+            "Usage Category: Moderate User",
+            "Bill Status: Standard Payment",
+            "Mika Tan",
+            "Heavy User",
+            "Standard Payment",
+            "Invalid Plan Code"
+          ]
+        }
+      ]
+    }
+  }
+}

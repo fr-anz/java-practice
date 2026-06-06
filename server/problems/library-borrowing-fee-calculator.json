@@ -1,0 +1,163 @@
+{
+  "id": "library-borrowing-fee-calculator",
+  "title": "Library Borrowing Fee Calculator",
+  "category": "Scanner, Methods, If-Else, Switch, Exception Handling",
+  "description": "Create a simple Java console-based application that checks borrower type, overdue status, book category, and overdue fee.",
+  "classNamePattern": "Main",
+  "levels": {
+    "easy": {
+      "summary": "Input borrower name, borrower age, and book code. Display borrower category and book category.",
+      "requirements": [
+        "Use clear input prompts, for example Enter Borrower Name:, Enter Borrower Age:, and Enter Book Code:.",
+        "Display the required output values clearly after all inputs are processed.",
+        "Ask for borrower name, borrower age, and book code.",
+        "Determine the borrower category using getBorrowerCategory(int age).",
+        "Determine the book category using getBookCategory(String bookCode).",
+        "Use if-else for borrower category and switch for book code."
+      ],
+      "conceptChecks": {
+        "scanner": true,
+        "ifElse": true,
+        "switch": true,
+        "loop": false,
+        "methods": 2,
+        "exceptionHandling": true,
+        "scannerClose": true
+      },
+      "visibleSample": {
+        "input": "Juan Cruz\n18\nfic\n",
+        "expectedOutput": [
+          "Juan Cruz",
+          "18",
+          "Student Borrower",
+          "FIC",
+          "Fiction"
+        ]
+      },
+      "hiddenTests": [
+        {
+          "input": "Ana Reyes\n9\nsci\n",
+          "expectedContains": [
+            "Ana Reyes",
+            "Child Borrower",
+            "SCI",
+            "Science"
+          ]
+        },
+        {
+          "input": "Ben Lim\n66\nhist\n",
+          "expectedContains": [
+            "Ben Lim",
+            "Senior Borrower",
+            "HIST",
+            "History"
+          ]
+        }
+      ]
+    },
+    "medium": {
+      "summary": "Add days overdue and display overdue status.",
+      "requirements": [
+        "Add an input for number of days overdue.",
+        "Display days overdue and overdue status.",
+        "Add number of days overdue as a new input.",
+        "Determine the overdue status using getOverdueStatus(int daysOverdue)."
+      ],
+      "conceptChecks": {
+        "scanner": true,
+        "ifElse": true,
+        "switch": true,
+        "loop": false,
+        "methods": 3,
+        "exceptionHandling": true,
+        "scannerClose": true
+      },
+      "visibleSample": {
+        "input": "Juan Cruz\n18\n5\nfic\n",
+        "expectedOutput": [
+          "Juan Cruz",
+          "Student Borrower",
+          "5",
+          "Moderately Overdue",
+          "FIC",
+          "Fiction"
+        ]
+      },
+      "hiddenTests": [
+        {
+          "input": "Cora Lim\n30\n0\nnf\n",
+          "expectedContains": [
+            "Cora Lim",
+            "Adult Borrower",
+            "No Overdue",
+            "NF",
+            "Non-Fiction"
+          ]
+        },
+        {
+          "input": "Mika Tan\n16\n9\nsci\n",
+          "expectedContains": [
+            "Mika Tan",
+            "Student Borrower",
+            "Severely Overdue",
+            "SCI",
+            "Science"
+          ]
+        }
+      ]
+    },
+    "hard": {
+      "summary": "Calculate overdue fee and display the complete borrowing result.",
+      "requirements": [
+        "Add a labeled output line for overdue fee.",
+        "Display the complete borrowing fee result.",
+        "Calculate overdue fee using number of days overdue * 10.",
+        "Display the complete borrowing fee result.",
+        "Handle invalid age and days-overdue values properly."
+      ],
+      "conceptChecks": {
+        "scanner": true,
+        "ifElse": true,
+        "switch": true,
+        "loop": false,
+        "methods": 3,
+        "exceptionHandling": true,
+        "scannerClose": true
+      },
+      "visibleSample": {
+        "input": "Juan Cruz\n18\n5\nfic\n",
+        "expectedOutput": [
+          "Juan Cruz",
+          "Student Borrower",
+          "5",
+          "Moderately Overdue",
+          "50",
+          "FIC",
+          "Fiction"
+        ]
+      },
+      "hiddenTests": [
+        {
+          "input": "Ana Reyes\n12\n0\nhist\n",
+          "expectedContains": [
+            "Ana Reyes",
+            "Child Borrower",
+            "No Overdue",
+            "0",
+            "History"
+          ]
+        },
+        {
+          "input": "Ben Lim\n44\n12\nbad\n",
+          "expectedContains": [
+            "Ben Lim",
+            "Adult Borrower",
+            "Severely Overdue",
+            "120",
+            "Invalid Book Code"
+          ]
+        }
+      ]
+    }
+  }
+}

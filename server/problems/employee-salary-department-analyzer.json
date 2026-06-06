@@ -1,0 +1,161 @@
+{
+  "id": "employee-salary-department-analyzer",
+  "title": "Employee Salary and Department Analyzer",
+  "category": "Scanner, Methods, If-Else, Switch, Exception Handling",
+  "description": "Create a simple Java console-based application that analyzes an employee's salary level, service status, and department name.",
+  "classNamePattern": "Main",
+  "levels": {
+    "easy": {
+      "summary": "Input employee name, monthly salary, and department code. Display salary level and department name.",
+      "requirements": [
+        "Use clear input prompts, for example Enter Employee Name:, Enter Monthly Salary:, and Enter Department Code:.",
+        "Display the required output values clearly after all inputs are processed.",
+        "Ask for employee name, monthly salary, and department code.",
+        "Determine the salary level using getSalaryLevel(double salary).",
+        "Determine the department name using getDepartmentName(String departmentCode).",
+        "Use if-else for salary level and switch for department code."
+      ],
+      "conceptChecks": {
+        "scanner": true,
+        "ifElse": true,
+        "switch": true,
+        "loop": false,
+        "methods": 2,
+        "exceptionHandling": true,
+        "scannerClose": true
+      },
+      "visibleSample": {
+        "input": "Jose Rizal\n28000\nit\n",
+        "expectedOutput": [
+          "Jose Rizal",
+          "28000",
+          "Junior Level",
+          "IT",
+          "Information Technology Department"
+        ]
+      },
+      "hiddenTests": [
+        {
+          "input": "Ana Cruz\n65000\nhr\n",
+          "expectedContains": [
+            "Ana Cruz",
+            "Senior Level",
+            "HR",
+            "Human Resources Department"
+          ]
+        },
+        {
+          "input": "Ben Reyes\n12000\nbad\n",
+          "expectedContains": [
+            "Ben Reyes",
+            "Entry Level",
+            "BAD",
+            "Invalid Department Code"
+          ]
+        }
+      ]
+    },
+    "medium": {
+      "summary": "Add years of service and display service status.",
+      "requirements": [
+        "Add an input for years of service.",
+        "Display years of service and service status.",
+        "Add years of service as a new input.",
+        "Determine the service status using getServiceStatus(int years)."
+      ],
+      "conceptChecks": {
+        "scanner": true,
+        "ifElse": true,
+        "switch": true,
+        "loop": false,
+        "methods": 3,
+        "exceptionHandling": true,
+        "scannerClose": true
+      },
+      "visibleSample": {
+        "input": "Jose Rizal\n28000\n4\nit\n",
+        "expectedOutput": [
+          "Jose Rizal",
+          "Junior Level",
+          "4",
+          "Regular Employee",
+          "IT",
+          "Information Technology Department"
+        ]
+      },
+      "hiddenTests": [
+        {
+          "input": "Cora Lim\n45000\n8\nfin\n",
+          "expectedContains": [
+            "Cora Lim",
+            "Mid Level",
+            "Experienced Employee",
+            "FIN",
+            "Finance Department"
+          ]
+        },
+        {
+          "input": "Dan Tan\n75000\n12\nmkt\n",
+          "expectedContains": [
+            "Dan Tan",
+            "Senior Level",
+            "Veteran Employee",
+            "MKT",
+            "Marketing Department"
+          ]
+        }
+      ]
+    },
+    "hard": {
+      "summary": "Display the complete employee salary and department result.",
+      "requirements": [
+        "Display the final output clearly and consistently.",
+        "Display the complete employee salary and department result.",
+        "Display the complete employee salary and department result after all inputs are entered.",
+        "Include employee name, salary level, years of service, service status, department code, and department name.",
+        "Handle invalid salary and years-of-service values properly."
+      ],
+      "conceptChecks": {
+        "scanner": true,
+        "ifElse": true,
+        "switch": true,
+        "loop": false,
+        "methods": 3,
+        "exceptionHandling": true,
+        "scannerClose": true
+      },
+      "visibleSample": {
+        "input": "Jose Rizal\n28000\n4\nit\n",
+        "expectedOutput": [
+          "Jose Rizal",
+          "28000",
+          "Junior Level",
+          "4",
+          "Regular Employee",
+          "IT",
+          "Information Technology Department"
+        ]
+      },
+      "hiddenTests": [
+        {
+          "input": "Ana Cruz\n15000\n1\nhr\n",
+          "expectedContains": [
+            "Ana Cruz",
+            "Entry Level",
+            "New Employee",
+            "Human Resources Department"
+          ]
+        },
+        {
+          "input": "Ben Reyes\n30001\n6\nfin\n",
+          "expectedContains": [
+            "Ben Reyes",
+            "Mid Level",
+            "Experienced Employee",
+            "Finance Department"
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,167 @@
+{
+  "id": "vehicle-rental-fee-analyzer",
+  "title": "Vehicle Rental Fee Analyzer",
+  "category": "Scanner, Methods, If-Else, Switch, Exception Handling",
+  "description": "Create a simple Java console-based application that analyzes a vehicle rental transaction based on rental days, driver age, vehicle code, and rental fee.",
+  "classNamePattern": "Main",
+  "levels": {
+    "easy": {
+      "summary": "Input customer name, driver age, and vehicle code. Display driver category and vehicle type.",
+      "requirements": [
+        "Use clear input prompts, for example Enter Customer Name:, Enter Driver Age:, and Enter Vehicle Code:.",
+        "Display the required output values clearly after all inputs are processed.",
+        "Ask for customer name, driver age, and vehicle code.",
+        "Determine the driver category using getDriverCategory(int age).",
+        "Determine the vehicle type using getVehicleType(String vehicleCode).",
+        "Use if-else for driver category and switch for vehicle code."
+      ],
+      "conceptChecks": {
+        "scanner": true,
+        "ifElse": true,
+        "switch": true,
+        "loop": false,
+        "methods": 2,
+        "exceptionHandling": true,
+        "scannerClose": true
+      },
+      "visibleSample": {
+        "input": "Maria Santos\n30\ncar\n",
+        "expectedOutput": [
+          "Maria Santos",
+          "30",
+          "Adult Driver",
+          "CAR",
+          "Sedan Car"
+        ]
+      },
+      "hiddenTests": [
+        {
+          "input": "Leo Cruz\n21\nmc\n",
+          "expectedContains": [
+            "Leo Cruz",
+            "Young Driver",
+            "MC",
+            "Motorcycle"
+          ]
+        },
+        {
+          "input": "Ana Reyes\n16\nsuv\n",
+          "expectedContains": [
+            "Ana Reyes",
+            "Not Allowed",
+            "SUV",
+            "Sports Utility Vehicle"
+          ]
+        }
+      ]
+    },
+    "medium": {
+      "summary": "Add rental days and display rental duration category.",
+      "requirements": [
+        "Add an input for number of rental days.",
+        "Display rental days and rental duration category.",
+        "Add number of rental days as a new input.",
+        "Determine the rental duration category using getRentalDurationCategory(int days)."
+      ],
+      "conceptChecks": {
+        "scanner": true,
+        "ifElse": true,
+        "switch": true,
+        "loop": false,
+        "methods": 3,
+        "exceptionHandling": true,
+        "scannerClose": true
+      },
+      "visibleSample": {
+        "input": "Maria Santos\n30\n5\ncar\n",
+        "expectedOutput": [
+          "Maria Santos",
+          "Adult Driver",
+          "5",
+          "Weekly Rental",
+          "CAR",
+          "Sedan Car"
+        ]
+      },
+      "hiddenTests": [
+        {
+          "input": "Ben Reyes\n65\n16\nvan\n",
+          "expectedContains": [
+            "Ben Reyes",
+            "Senior Driver",
+            "Long-Term Rental",
+            "VAN",
+            "Passenger Van"
+          ]
+        },
+        {
+          "input": "Cora Lim\n24\n2\nsuv\n",
+          "expectedContains": [
+            "Cora Lim",
+            "Young Driver",
+            "Short Rental",
+            "SUV",
+            "Sports Utility Vehicle"
+          ]
+        }
+      ]
+    },
+    "hard": {
+      "summary": "Calculate rental fee using the vehicle type's daily rate and display the complete rental result.",
+      "requirements": [
+        "Display daily rate and rental fee.",
+        "Display the complete vehicle rental result.",
+        "Determine the daily rate using getDailyRate(String vehicleCode).",
+        "Calculate rental fee using rental days * daily rate.",
+        "Use daily rates: CAR=1500, SUV=2500, VAN=3000, MC=800, invalid code=0.",
+        "Display the complete vehicle rental result."
+      ],
+      "conceptChecks": {
+        "scanner": true,
+        "ifElse": true,
+        "switch": true,
+        "loop": false,
+        "methods": 4,
+        "exceptionHandling": true,
+        "scannerClose": true
+      },
+      "visibleSample": {
+        "input": "Maria Santos\n30\n5\ncar\n",
+        "expectedOutput": [
+          "Maria Santos",
+          "30",
+          "Adult Driver",
+          "5",
+          "Weekly Rental",
+          "CAR",
+          "Sedan Car",
+          "1500",
+          "7500"
+        ]
+      },
+      "hiddenTests": [
+        {
+          "input": "Ben Reyes\n65\n16\nvan\n",
+          "expectedContains": [
+            "Ben Reyes",
+            "Senior Driver",
+            "Long-Term Rental",
+            "Passenger Van",
+            "3000",
+            "48000"
+          ]
+        },
+        {
+          "input": "Ana Cruz\n22\n3\nbad\n",
+          "expectedContains": [
+            "Ana Cruz",
+            "Young Driver",
+            "Weekly Rental",
+            "Invalid Vehicle Code",
+            "0"
+          ]
+        }
+      ]
+    }
+  }
+}

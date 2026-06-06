@@ -1,0 +1,176 @@
+{
+  "id": "product-discount-category-checker",
+  "title": "Product Discount and Category Checker",
+  "category": "Scanner, Methods, If-Else, Switch, Exception Handling",
+  "description": "Create a simple Java console-based application that checks a product's price category, discount rate, product type, and final amount.",
+  "classNamePattern": "Main",
+  "levels": {
+    "easy": {
+      "summary": "Input product name, product price, and product code. Display price category and product type.",
+      "requirements": [
+        "Use clear input prompts, for example Enter Product Name:, Enter Product Price:, and Enter Product Code:.",
+        "Display the required output values clearly after all inputs are processed.",
+        "Ask for product name, product price, and product code.",
+        "Determine the price category using getPriceCategory(double price).",
+        "Determine the product type using getProductType(String productCode).",
+        "Use if-else for price category and switch for product code."
+      ],
+      "conceptChecks": {
+        "scanner": true,
+        "ifElse": true,
+        "switch": true,
+        "loop": false,
+        "methods": 2,
+        "exceptionHandling": true,
+        "scannerClose": true
+      },
+      "visibleSample": {
+        "input": "Laptop\n45000\ntech\n",
+        "expectedOutput": [
+          "Laptop",
+          "45000",
+          "Luxury Item",
+          "TECH",
+          "Technology Product"
+        ]
+      },
+      "hiddenTests": [
+        {
+          "input": "Bread\n120\nfood\n",
+          "expectedContains": [
+            "Price Category: Luxury Item",
+            "Bread",
+            "Budget Item",
+            "FOOD",
+            "Food Product"
+          ]
+        },
+        {
+          "input": "Chair\n1800\nhome\n",
+          "expectedContains": [
+            "Price Category: Luxury Item",
+            "Chair",
+            "Premium Item",
+            "HOME",
+            "Home Product"
+          ]
+        }
+      ]
+    },
+    "medium": {
+      "summary": "Add quantity and display the discount rate.",
+      "requirements": [
+        "Add an input for quantity.",
+        "Display quantity and discount rate.",
+        "Add quantity as a new input.",
+        "Determine the discount rate using getDiscountRate(int quantity)."
+      ],
+      "conceptChecks": {
+        "scanner": true,
+        "ifElse": true,
+        "switch": true,
+        "loop": false,
+        "methods": 3,
+        "exceptionHandling": true,
+        "scannerClose": true
+      },
+      "visibleSample": {
+        "input": "T-Shirt\n700\n4\nclth\n",
+        "expectedOutput": [
+          "T-Shirt",
+          "700",
+          "Standard Item",
+          "4",
+          "5",
+          "CLTH",
+          "Clothing Product"
+        ]
+      },
+      "hiddenTests": [
+        {
+          "input": "Rice Cooker\n3200\n8\nhome\n",
+          "expectedContains": [
+            "Price Category: Standard Item",
+            "Rice Cooker",
+            "Premium Item",
+            "10",
+            "HOME",
+            "Home Product"
+          ]
+        },
+        {
+          "input": "Milk\n95\n1\nfood\n",
+          "expectedContains": [
+            "Price Category: Standard Item",
+            "Milk",
+            "Budget Item",
+            "0",
+            "FOOD",
+            "Food Product"
+          ]
+        }
+      ]
+    },
+    "hard": {
+      "summary": "Calculate total amount before discount, discount amount, and final amount.",
+      "requirements": [
+        "Display total amount before discount, discount amount, and final amount.",
+        "Display the complete product discount result.",
+        "Calculate total amount before discount using product price * quantity.",
+        "Calculate discount amount using total amount * discount rate.",
+        "Calculate final amount using total amount - discount amount.",
+        "Display the complete product discount result."
+      ],
+      "conceptChecks": {
+        "scanner": true,
+        "ifElse": true,
+        "switch": true,
+        "loop": false,
+        "methods": 3,
+        "exceptionHandling": true,
+        "scannerClose": true
+      },
+      "visibleSample": {
+        "input": "T-Shirt\n700\n4\nclth\n",
+        "expectedOutput": [
+          "T-Shirt",
+          "700",
+          "Standard Item",
+          "4",
+          "5",
+          "2800",
+          "140",
+          "2660",
+          "CLTH",
+          "Clothing Product"
+        ]
+      },
+      "hiddenTests": [
+        {
+          "input": "Laptop\n45000\n2\ntech\n",
+          "expectedContains": [
+            "Price Category: Standard Item",
+            "Laptop",
+            "Luxury Item",
+            "0",
+            "90000",
+            "Final Amount",
+            "Technology Product"
+          ]
+        },
+        {
+          "input": "Table\n2000\n12\nhome\n",
+          "expectedContains": [
+            "Price Category: Standard Item",
+            "Table",
+            "Premium Item",
+            "15",
+            "24000",
+            "3600",
+            "20400"
+          ]
+        }
+      ]
+    }
+  }
+}

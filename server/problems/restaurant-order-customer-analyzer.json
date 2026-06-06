@@ -1,0 +1,161 @@
+{
+  "id": "restaurant-order-customer-analyzer",
+  "title": "Restaurant Order and Customer Analyzer",
+  "category": "Scanner, Methods, If-Else, Switch, Exception Handling",
+  "description": "Create a simple Java console-based application that analyzes a customer's order amount, customer age category, and meal category.",
+  "classNamePattern": "Main",
+  "levels": {
+    "easy": {
+      "summary": "Input customer name, order amount, and meal code. Display order category and meal category.",
+      "requirements": [
+        "Use clear input prompts, for example Enter Customer Name:, Enter Order Amount:, and Enter Meal Code:.",
+        "Display the required output values clearly after all inputs are processed.",
+        "Ask for customer name, order amount, and meal code.",
+        "Determine the order category using getOrderCategory(double amount).",
+        "Determine the meal category using getMealCategory(String mealCode).",
+        "Use if-else for order category and switch for meal code."
+      ],
+      "conceptChecks": {
+        "scanner": true,
+        "ifElse": true,
+        "switch": true,
+        "loop": false,
+        "methods": 2,
+        "exceptionHandling": true,
+        "scannerClose": true
+      },
+      "visibleSample": {
+        "input": "Jose Rizal\n650\ndn\n",
+        "expectedOutput": [
+          "Jose Rizal",
+          "650",
+          "Large Order",
+          "DN",
+          "Dinner Meal"
+        ]
+      },
+      "hiddenTests": [
+        {
+          "input": "Ana Cruz\n180\nbf\n",
+          "expectedContains": [
+            "Ana Cruz",
+            "Small Order",
+            "BF",
+            "Breakfast Meal"
+          ]
+        },
+        {
+          "input": "Ben Reyes\n1200\nsnk\n",
+          "expectedContains": [
+            "Ben Reyes",
+            "Premium Order",
+            "SNK",
+            "Snack Meal"
+          ]
+        }
+      ]
+    },
+    "medium": {
+      "summary": "Add customer age and display customer category.",
+      "requirements": [
+        "Add an input for customer age.",
+        "Display customer age and customer category.",
+        "Add customer age as a new input.",
+        "Determine the customer category using getCustomerCategory(int age)."
+      ],
+      "conceptChecks": {
+        "scanner": true,
+        "ifElse": true,
+        "switch": true,
+        "loop": false,
+        "methods": 3,
+        "exceptionHandling": true,
+        "scannerClose": true
+      },
+      "visibleSample": {
+        "input": "Jose Rizal\n650\n30\ndn\n",
+        "expectedOutput": [
+          "Jose Rizal",
+          "Large Order",
+          "30",
+          "Adult Customer",
+          "DN",
+          "Dinner Meal"
+        ]
+      },
+      "hiddenTests": [
+        {
+          "input": "Cora Lim\n450\n17\nln\n",
+          "expectedContains": [
+            "Cora Lim",
+            "Regular Order",
+            "Teen Customer",
+            "LN",
+            "Lunch Meal"
+          ]
+        },
+        {
+          "input": "Dan Tan\n100\n8\nbf\n",
+          "expectedContains": [
+            "Dan Tan",
+            "Small Order",
+            "Child Customer",
+            "BF",
+            "Breakfast Meal"
+          ]
+        }
+      ]
+    },
+    "hard": {
+      "summary": "Display the complete restaurant order result.",
+      "requirements": [
+        "Display the final output clearly and consistently.",
+        "Display the complete restaurant order result.",
+        "Display the complete restaurant order result after all inputs are entered.",
+        "Include customer name, order amount, order category, customer age, customer category, meal code, and meal category.",
+        "Handle invalid order amount and age values properly."
+      ],
+      "conceptChecks": {
+        "scanner": true,
+        "ifElse": true,
+        "switch": true,
+        "loop": false,
+        "methods": 3,
+        "exceptionHandling": true,
+        "scannerClose": true
+      },
+      "visibleSample": {
+        "input": "Jose Rizal\n650\n30\ndn\n",
+        "expectedOutput": [
+          "Jose Rizal",
+          "650",
+          "Large Order",
+          "30",
+          "Adult Customer",
+          "DN",
+          "Dinner Meal"
+        ]
+      },
+      "hiddenTests": [
+        {
+          "input": "Ana Cruz\n999\n60\nsnk\n",
+          "expectedContains": [
+            "Ana Cruz",
+            "Large Order",
+            "Senior Customer",
+            "Snack Meal"
+          ]
+        },
+        {
+          "input": "Ben Reyes\n200\n20\nbad\n",
+          "expectedContains": [
+            "Ben Reyes",
+            "Regular Order",
+            "Adult Customer",
+            "Invalid Meal Code"
+          ]
+        }
+      ]
+    }
+  }
+}
